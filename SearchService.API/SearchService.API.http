@@ -1,0 +1,15 @@
+@SearchService.API_HostAddress = http://localhost:5113
+
+POST {{SearchService.API_HostAddress}}/api/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "serviceName": "Massage",
+  "userLocation": {
+    "lat": 59.3,
+    "lng": 18.0
+  }
+}
+
+###
