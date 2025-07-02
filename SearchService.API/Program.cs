@@ -27,7 +27,7 @@ builder.Services.AddScoped<ISearchService, SearchService.BL.SearchApplicationSer
 
 var dataFilePath = builder.Configuration.GetValue<string>("DataFile");
 
-builder.Services.AddSingleton<IServiceRepository>(sp =>
+builder.Services.AddScoped<IServiceRepository>(sp =>
     new JsonServiceRepository(
         Path.Combine(AppContext.BaseDirectory, dataFilePath),
         sp.GetRequiredService<ILogger<JsonServiceRepository>>()
